@@ -11,12 +11,24 @@
     "test": "NODE_ENV=test& jest --runInBand"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.23.0"
+    "sequelize": "^6.23.0",
+    "swagger-autogen": "^2.21.8",
+    "swagger-ui-express": "^4.5.0",
+    "xss-clean": "^0.1.1"
   },
   "devDependencies": {
+    "jest": "^29.0.3",
     "nodemon": "^2.0.20",
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+    "supertest": "^6.2.4"
   }
 }
