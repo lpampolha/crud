@@ -1,11 +1,13 @@
 const express = require('express');
 const { Router } = require('express');
 const bodyParser = require('body-parser')
-const cors = require('cors');
-const dotenv = require('dotenv');
-const hpp = require('hpp');
+const cors = require('cors')
+const dotenv = require('dotenv')
+const hpp = require('hpp')
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./swagger/swagger_output.json')
+const routes = require('./routes/routes')
+
 const xss = require('xss-clean')
 const app = express();
 const PORT = process.env.PORT || 3001
@@ -30,9 +32,9 @@ app.use(
     })
 );
 app.use(xss());
-
-app.use('/', (req,res) => {res.json('CRUD')});
-
-app.listen(PORT, () => {console.log(`Server running on port ${PORT}`)})
+app.use(routes)
 
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
+
+app.listen(PORT, () => {console.log(`Server running on port ${PORT}`)})
