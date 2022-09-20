@@ -1,13 +1,17 @@
-const Sequelize = require('sequelize')
-const sequelize = new Sequelize('user', 'root', '', {
-    host: "localhost",
-    dialect: "mysql"
+const {Sequelize} = require('sequelize')
+const sequelize = new Sequelize('crud', 'root', '', {
+    host: 'localhost',
+    dialect: 'mysql',
+    define: {
+        timestamps: false
+    }
 })
 
-    const User = sequelize.define('user', {
+const User = sequelize.define('users', {
     id: {
         type: Sequelize.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     name: {
         type: Sequelize.STRING
@@ -15,20 +19,55 @@ const sequelize = new Sequelize('user', 'root', '', {
     email: {
         type: Sequelize.STRING
     },
-    password: {
-        type: Sequelize.STRING
-    },
     contato: {
         type: Sequelize.STRING
     },
-    createdAt: {
-        type: Sequelize.DATE,
-        field: 'created_at'
-    },
-    updateAt: {
-        type: Sequelize.DATE,
-        field: 'update_at'
+    password: {
+        type: Sequelize.STRING
     }
+    // createdAt: {
+    //     type: Sequelize.DATE,
+    //     // autoIncrement: true,
+    //     field: 'created_at'
+    // },
+    // updateAt: {
+    //     type: Sequelize.DATE,
+    //     // autoIncrement: true,
+    //     field: 'update_at'
+    // },
 })
 
-return User
+
+module.exports = User
+
+// const {Model, DataTypes} = require('sequelize')
+// // 
+// // 
+// class User extends Model {
+//     static init(sequelize){
+//         super.init({
+//             id: {
+//                 type: DataTypes.INTEGER,
+//                 autoIncrement: true
+//             },
+//             name: Sequelize.STRING,
+//             email: Sequelize.STRING,
+//             password: Sequelize.STRING,
+//             contato: {
+//                 type: Sequelize.STRING
+//             },
+//             created_at: {
+//                 type: Sequelize.DATE,
+//                 autoIncrement: true
+//                 // field: 'created_at'
+//             },
+//             update_at: {
+//                 type: Sequelize.DATE
+//                 // field: 'update_at'
+//             }
+//         })
+//     }
+// }
+
+
+// module.exports = User

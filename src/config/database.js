@@ -1,3 +1,7 @@
+const dotenv = require('dotenv')
+
+dotenv.config({path:'../config/database.js'})
+
 module.exports = {
     "development": {
       "username": "root",
