@@ -1,4 +1,4 @@
-const User = require('../models/User')
+const User = require('../../bkp/models/User')
 
 module.exports = {
     createUser: async(req,res) => {
