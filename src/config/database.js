@@ -5,7 +5,8 @@ module.exports = {
       "database": "crud",
       "host": "localhost",
       "dialect": "mysql",
-      "logging": true
+      "define": true,
+      // "logging": true #deprecado
     },
     "test": {
       "username": "root",
@@ -13,7 +14,8 @@ module.exports = {
       "database": "crud",
       "host": "localhost",
       "dialect": "mysql",
-      "logging": true
+      "define": true,
+      // "logging": true #deprecado
     },
     "production": {
       "username": "root",
@@ -21,6 +23,7 @@ module.exports = {
       "database": "crud",
       "host": "localhost",
       "dialect": "mysql",
-      "logging": false
+      "define": true,
+      // "logging": false #deprecado
     }
   }
