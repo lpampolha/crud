@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
-    "swagger-autogen": "node swagger",
+    "swagger": "node swagger-autogen",
     "test": "NODE_ENV=test& jest --runInBand"
   },
   "dependencies": {

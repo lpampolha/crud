@@ -47,3 +47,5 @@
 
 #### Para rodar as modificações, o comando é o mesmo da criação da primeira migrate
 `npx sequelize-cli db:migrate`
+
+## Test e Supertest

@@ -33,8 +33,6 @@ app.use(
 );
 app.use(xss());
 app.use(routes)
-
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
-
 
 app.listen(PORT, () => {console.log(`Server running on port ${PORT}`)})
