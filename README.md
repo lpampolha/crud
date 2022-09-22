@@ -49,3 +49,14 @@
 `npx sequelize-cli db:migrate`
 
 ## Test e Supertest
+
+
+## Swagger
+
+- Para correção do erro de requisição na página, cole no description de cada rota o seguinte: 
+
+`{
+          "200": {
+            "description": "OK"
+          }
+        }`
