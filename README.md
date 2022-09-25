@@ -62,6 +62,9 @@
 ✔ Which provider should be used to instrument code for coverage? › v8
 ✔ Automatically clear mock calls, instances, contexts and results before every test? … yes
 
+#### Comando para rodar o test
+`npm test`
+
 ## Swagger
 
 - Para correção do erro de requisição na página, cole no description de cada rota o seguinte: 
