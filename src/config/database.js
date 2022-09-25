@@ -1,13 +1,13 @@
 const dotenv = require('dotenv')
 
-dotenv.config({path:'../config/database.js'})
+dotenv.config({path:'./config.env'})
 
 module.exports = {
     "development": {
-      "username": "root",
-      "password": "",
-      "database": "crud",
-      "host": "localhost",
+      "username": process.env.DB_USER,
+      "password": process.env.DB_PWD,
+      "database": process.env.DB_NAME,
+      "host": process.env.DB_HOST,
       "dialect": "mysql",
       "define": true,
       // "logging": true #deprecado

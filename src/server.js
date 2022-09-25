@@ -11,7 +11,7 @@ const xss = require('xss-clean')
 const app = express();
 const PORT = process.env.PORT || 3001
 
-dotenv.config({path:'./config/.env'});
+dotenv.config({path:'./config/config.env'});
 require('./database/connection')
 
 app.use(cors())
