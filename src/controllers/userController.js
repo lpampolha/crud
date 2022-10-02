@@ -36,13 +36,13 @@ module.exports = {
             const user = await UserService.createUser(name, email, password, contato)
 
             if(user instanceof Error){
-                res.json({error: user.message})
+                return res.json({error: user.message})
             }else{
                 res.status(201)
-                res.json({id: user.id})
+                return res.json({id: user.id})
             }
         }
-        // res.json({error: 'E-mail e/ou senha não enviados.'})
+            return res.json({error: 'E-mail e/ou senha não enviados.'})
     },
 
     login: async(req,res) => {
