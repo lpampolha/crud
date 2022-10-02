@@ -1,10 +1,12 @@
-import bcrypt from 'bcryptjs'
-import {User} from '../models/User'
+const bcrypt = require('bcrypt')
+const User = require('../models/User')
 
-export const createUser = async (name, email, password, contato) => {
+module.exports = {
+    createUser: async (name, email, password, contato) => {
     const hashUser = await User.findOne({ where: {email}})
     if(!hashUser){
-        const hash = bcrypt.hashSync(password,10)
+        const salt = bcrypt.genSaltSync(10)
+        const hash = bcrypt.hashSync(password,salt)
         const user = await User.create({
             name, 
             email, 
@@ -15,16 +17,18 @@ export const createUser = async (name, email, password, contato) => {
     }else{
         return new Error('E-mail já existe')
     }
-}
+},
 
-export const findByEmail = async (email) => {
+    findByEmail: async (email) => {
     return await User.findOne({where: {email}})
-}
+},
 
-export const matchPassword = (passwordText, encrypted) => {
+    matchPassword: (passwordText, encrypted) => {
     return bcrypt.compareSync(passwordText, encrypted )
+},
+
+    allUsers: async () => {
+    return await User.findAll()
 }
 
-export const allUsers = async () => {
-    return await User.findAll()
 }

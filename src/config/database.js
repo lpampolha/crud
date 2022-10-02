@@ -4,30 +4,42 @@ dotenv.config({path:'./config.env'})
 
 module.exports = {
     "development": {
+      "host": process.env.DB_HOST,
       "username": process.env.DB_USER,
       "password": process.env.DB_PWD,
       "database": process.env.DB_NAME,
-      "host": process.env.DB_HOST,
       "dialect": "mysql",
-      "define": true,
+      "define": {
+        timestamps: true,
+        underscored: true,
+        underscoredAll: true
+      }
       // "logging": true #deprecado
     },
     "test": {
-      "username": "root",
-      "password": "",
-      "database": "crud",
-      "host": "localhost",
+      "host": process.env.DB_HOST,
+      "username": process.env.DB_USER,
+      "password": process.env.DB_PWD,
+      "database": process.env.DB_TEST_NAME,
       "dialect": "mysql",
-      "define": true,
+      "define": {
+        timestamps: true,
+        underscored: true,
+        underscoredAll: true
+      }
       // "logging": true #deprecado
     },
     "production": {
-      "username": "root",
-      "password": "",
-      "database": "crud",
-      "host": "localhost",
+      "host": process.env.DB_HOST,
+      "username": process.env.DB_USER,
+      "password": process.env.DB_PWD,
+      "database": process.env.DB_NAME,
       "dialect": "mysql",
-      "define": true,
+      "define": {
+        timestamps: true,
+        underscored: true,
+        underscoredAll: true
+      }
       // "logging": false #deprecado
     }
   }
